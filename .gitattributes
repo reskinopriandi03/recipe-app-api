@@ -1,0 +1,11 @@
+# Mengatur perilaku default untuk menormalisasi line endings
+* text=auto
+
+# Menentukan file Python untuk selalu menggunakan LF
+*.py text eol=lf
+
+# Menentukan file binary yang tidak boleh diubah
+*.png binary
+*.jpg binary
+*.gif binary
+*.pdf binary
