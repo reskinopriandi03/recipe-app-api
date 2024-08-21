@@ -17,6 +17,7 @@ def create_user(**params):
     """Create and return a new user."""
     return get_user_model().objects.create_user(**params)
 
+
 class PublicUserApiTests(TestCase):
     """Test the public features of the user API."""
 
@@ -37,6 +38,7 @@ class PublicUserApiTests(TestCase):
         user = get_user_model().objects.get(email=payload['email'])
         self.assertTrue(user.check_password(payload['password']))
         self.assertNotIn('password', res.data)  # Password is not returned in the response
+
 
     def test_user_with_email_exists_error(self):
         """Test error returned if user with email exists."""
@@ -64,3 +66,4 @@ class PublicUserApiTests(TestCase):
             email=payload['email']
         ).exists()
         self.assertFalse(user_exists)
+
