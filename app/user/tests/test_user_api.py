@@ -20,6 +20,7 @@ def create_user(**params):
 class PublicUserApiTests(TestCase):
     """Test the public features of the user API."""
 
+
     def setUp(self):
         self.client = APIClient()
 
@@ -63,4 +64,3 @@ class PublicUserApiTests(TestCase):
             email=payload['email']
         ).exists()
         self.assertFalse(user_exists)
-
