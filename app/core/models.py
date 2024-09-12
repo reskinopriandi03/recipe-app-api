@@ -23,7 +23,6 @@ def recipe_image_file_path(instance, filename):
 
 class UserManager(BaseUserManager):
     """Manager for users."""
-
     def create_user(self, email, password=None, **extra_fields):
         """Create, save and return a new user."""
         if not email:
@@ -53,6 +52,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
+
 
 class Recipe(models.Model):
     """Recipe object."""

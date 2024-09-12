@@ -51,7 +51,6 @@ def create_recipe(user, **params):
     recipe = Recipe.objects.create(user=user, **defaults)
     return recipe
 
-
 def create_user(**params):
     """Create and return a new user."""
     return get_user_model().objects.create_user(**params)
@@ -59,7 +58,6 @@ def create_user(**params):
 
 class PublicRecipeAPITests(TestCase):
     """Test unauthenticated API requests."""
-
     def setUp(self):
         self.client = APIClient()
 
@@ -72,7 +70,6 @@ class PublicRecipeAPITests(TestCase):
 
 class PrivateRecipeApiTests(TestCase):
     """Test authenticated API requests."""
-
     def setUp(self):
         self.client = APIClient()
         self.user = create_user(email='user@example.com',password='test123')
@@ -419,7 +416,6 @@ class PrivateRecipeApiTests(TestCase):
 
 class ImageUploadTests(TestCase):
     """Tests for the image upload API."""
-
     def setUp(self):
         self.client = APIClient()
         self.user = get_user_model().objects.create_user(
