@@ -24,6 +24,7 @@ def detail_url(ingredient_id):
     """Create and return a ingredient detail URL."""
     return reverse('recipe:ingredient-detail', args=[ingredient_id])
 
+
 def create_user(email='user@example.com', password='testpass123'):
     """Create and return a user."""
     return get_user_model().objects.create_user(email=email, password=password)
@@ -31,7 +32,6 @@ def create_user(email='user@example.com', password='testpass123'):
 
 class PublicIngredientsApiTests(TestCase):
     """Test unauthenticated API requests."""
-
     def setUp(self):
         self.client = APIClient()
 
